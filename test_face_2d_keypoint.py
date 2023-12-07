@@ -5,16 +5,16 @@ from mmpose.apis import inference_topdown, init_model
 from mmpose.registry import VISUALIZERS
 from mmpose.structures import merge_data_samples
 
-model_cfg = 'configs/body_2d_keypoint/topdown_heatmap/coco/td-hm_hrnet-w48_8xb32-210e_coco-256x192.py'
+model_cfg = 'configs/face_2d_keypoint/rtmpose/face6/rtmpose-m_8xb256-120e_face6-256x256.py'
 
-ckpt = 'https://download.openmmlab.com/mmpose/top_down/hrnet/hrnet_w48_coco_256x192-b9e0b3ab_20200708.pth'
+ckpt = 'https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/rtmpose-m_simcc-face6_pt-in1k_120e-256x256-72a37400_20230529.pth'
 
 device = 'cuda'
 
 # 使用初始化接口构建模型
 model = init_model(model_cfg, ckpt, device=device)
 
-img_path = 'tests/data/coco/000000000785.jpg'
+img_path = 'tests/data/cofw/001766.jpg'
 
 # 单张图片推理
 batch_results = inference_topdown(model, img_path)
