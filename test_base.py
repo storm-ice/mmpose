@@ -11,4 +11,4 @@ inferencer = MMPoseInferencer('human')
 result_generator = inferencer(img_path, show=True)
 result = next(result_generator)
 
-# print(result)
+print(result)
