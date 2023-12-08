@@ -239,7 +239,12 @@ def main():
             pred_instances = process_one_image(args, frame, detector,
                                                pose_estimator, visualizer,
                                                0.001)
-
+            # print(len(pred_instances.keypoints))
+            leng=pred_instances.keypoints.shape[1]
+            for i in range(leng):
+                print(f"{i}:{pred_instances.keypoints[0][i]}")
+            # print(pred_instances)
+            print()
             if args.save_predictions:
                 # save prediction results
                 pred_instances_list.append(
